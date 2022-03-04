@@ -3,7 +3,7 @@ FROM alpine
 
 # Install samba
 RUN <<EOF
-    apk add --no-cache samba tzdata bash tini
+    apk add --no-cache samba tzdata bash tini rsyslog
     addgroup -S smb
     adduser -S -D -H -h /tmp -s /sbin/nologin -G smb -g "" smbuser
 EOF

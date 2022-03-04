@@ -10,6 +10,14 @@ while read i; do
     eval create_user $(sed 's/^/"/; s/$/"/; s/;/" "/g' <<< $i)
 done < <(env | awk '/^USER[0-9=_]/ {sub (/^[^=]*=/, "", $0); print}')
 
+if ps -ef | egrep -v grep | grep -q rsyslogd; then
+    echo "rsyslogd already running."
+else
+    echo "local1.* /dev/stdout" >> /etc/rsyslog.conf
+    rsyslogd -n &
+fi
+
+
 if ps -ef | egrep -v grep | grep -q smbd; then
     echo "Service already running, please restart container to apply changes"
 else
