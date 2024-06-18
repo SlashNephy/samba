@@ -1,4 +1,4 @@
-# syntax = docker/dockerfile:1.8-labs@sha256:e91c81edd7c29eb54934c6d74c297ea4b2e9dc6f731aa47ea37fda701d77a3f1
+# syntax = docker/dockerfile:1.8-labs@sha256:d736f2a91d82bdd6ab90b952e65db92d1bb762a4dd8ac599a2a93f3ed2722920
 FROM alpine@sha256:77726ef6b57ddf65bb551896826ec38bc3e53f75cdde31354fbffb4f25238ebd
 
 # Install samba
